@@ -1,0 +1,7 @@
+marketing_mix_attribution:
+  target: duckdb
+  outputs:
+    duckdb:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_PATH', '../warehouse/marketing.duckdb') }}"
+      threads: 4

@@ -1,0 +1,69 @@
+{
+  "weeks": 156,
+  "holdout_weeks": 26,
+  "bootstrap_draws": 40,
+  "true_media_share": 0.285,
+  "lift_tests": {
+    "paid_social": {
+      "measured_roi": 0.945,
+      "standard_error": 0.25,
+      "true_roi": 1.5
+    },
+    "online_video": {
+      "measured_roi": 1.108,
+      "standard_error": 0.3,
+      "true_roi": 1.1
+    }
+  },
+  "weekly_budget": 64948,
+  "current_allocation": {
+    "paid_search": 24419,
+    "paid_social": 18627,
+    "display": 12713,
+    "online_video": 9189
+  },
+  "true_best_allocation": {
+    "paid_search": 28997,
+    "paid_social": 21680,
+    "display": 6357,
+    "online_video": 7914
+  },
+  "true_media_revenue_per_week": {
+    "current": 113796,
+    "true_best": 118588
+  },
+  "observational": {
+    "holdout_mape": 0.0363,
+    "in_sample_r2": 0.9287,
+    "estimated_media_share": 0.3242,
+    "mean_abs_roi_error": 0.609,
+    "truth_inside_90pct_interval": 4,
+    "roi_rank_order_correct": false,
+    "plan": {
+      "paid_search": 21064,
+      "paid_social": 27940,
+      "display": 10413,
+      "online_video": 5530
+    },
+    "model_predicted_uplift_per_week": 3993,
+    "true_uplift_per_week": -892,
+    "share_of_possible_uplift_captured": -0.186
+  },
+  "calibrated": {
+    "holdout_mape": 0.0365,
+    "in_sample_r2": 0.9283,
+    "estimated_media_share": 0.2715,
+    "mean_abs_roi_error": 0.163,
+    "truth_inside_90pct_interval": 3,
+    "roi_rank_order_correct": false,
+    "plan": {
+      "paid_search": 20448,
+      "paid_social": 27940,
+      "display": 9987,
+      "online_video": 6572
+    },
+    "model_predicted_uplift_per_week": 3118,
+    "true_uplift_per_week": -601,
+    "share_of_possible_uplift_captured": -0.125
+  }
+}

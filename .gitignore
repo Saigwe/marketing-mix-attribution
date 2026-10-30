@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+data/
+warehouse/
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+*.duckdb
+*.duckdb.wal
+results/mmm_run.log
+.user.yml

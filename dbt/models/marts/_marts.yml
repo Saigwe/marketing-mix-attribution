@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: int_ga4__sessions
+    columns:
+      - name: session_key
+        data_tests: [unique, not_null]
+      - name: channel
+        data_tests:
+          - accepted_values:
+              arguments: {values: [Direct, Organic Search, Paid Search, Referral, Affiliates, Email, Other, Unknown]}
+  - name: fct_sessions
+    data_tests:
+      - trust_tests.reconciles_to:
+          name: session_revenue_ties_to_orders
+          arguments:
+            to: ref('fct_orders')
+            measures: {orders: "sum(orders)", revenue: "sum(revenue_usd)"}
+            to_measures: {orders: "count(*)", revenue: "sum(revenue_usd)"}
+            tolerance: 0.01
+    columns:
+      - name: session_key
+        data_tests: [unique, not_null]
+  - name: fct_orders
+    columns:
+      - name: order_id
+        data_tests: [unique, not_null]
+      - name: session_key
+        data_tests:
+          - relationships:
+              arguments: {to: ref('fct_sessions'), field: session_key}
+  - name: int_conversion_paths
+    data_tests:
+      - trust_tests.unique_combination:
+          arguments: {columns: [order_id, touch_no]}
+  - name: rpt_funnel
+    data_tests:
+      - trust_tests.unique_combination:
+          arguments: {columns: [cut, segment, step_order]}
+  - name: rpt_attribution_rules
+    data_tests:
+      - trust_tests.unique_combination:
+          arguments: {columns: [model, channel]}
+  - name: rpt_channel_performance
+    data_tests:
+      - trust_tests.reconciles_to:
+          name: channel_revenue_ties_to_orders
+          arguments:
+            to: ref('fct_orders')
+            measures: {revenue: "sum(revenue_usd)"}
+            to_measures: {revenue: "sum(revenue_usd)"}
+            tolerance: 0.01

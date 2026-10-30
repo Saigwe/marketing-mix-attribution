@@ -1,0 +1,25 @@
+name: marketing_mix_attribution
+version: "0.1.0"
+config-version: 2
+profile: marketing_mix_attribution
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+target-path: target
+clean-targets: [target, dbt_packages]
+
+vars:
+  lookback_days: 30          # touches older than this before a purchase don't get credit
+  time_decay_half_life: 7    # days, for the time-decay model
+
+models:
+  marketing_mix_attribution:
+    staging:
+      +schema: silver
+      +materialized: view
+    intermediate:
+      +schema: silver
+      +materialized: table
+    marts:
+      +schema: gold
+      +materialized: table

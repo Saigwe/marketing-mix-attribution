@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Cache the GA4 sample (1.8 GB, checked against its sha256 on every run)
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: ga4-flattened-f09b13d6
+      - name: Real GA4 sample -> dbt -> attribution; simulated spend -> MMM; pytest
+        run: make all

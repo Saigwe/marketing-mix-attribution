@@ -1,0 +1,16 @@
+{
+  "converting_journeys": 5372,
+  "non_converting_journeys": 265735,
+  "orders": 5372,
+  "revenue_usd": 340647.0,
+  "single_touch_share": 0.4322,
+  "removal_effects": {
+    "Direct": 0.3972,
+    "Organic Search": 0.3964,
+    "Unknown": 0.3376,
+    "Referral": 0.0234,
+    "Paid Search": 0.0147,
+    "Email": 0.0044,
+    "Affiliates": 0.002
+  }
+}

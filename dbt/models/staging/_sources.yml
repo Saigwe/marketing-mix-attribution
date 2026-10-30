@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: "REAL. Google's public GA4 obfuscated sample for the Google Merchandise Store, Nov 2020 - Jan 2021, loaded by ingestion/load_ga4.py."
+    tables:
+      - name: ga4_events
+
+models:
+  - name: stg_ga4__events
+    columns:
+      - name: session_key
+        data_tests: [not_null]
+      - name: event_name
+        data_tests: [not_null]
