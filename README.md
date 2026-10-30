@@ -114,9 +114,11 @@ What it says:
 | | Paid search | Paid social | Display | Online video | True media revenue / week | vs today |
 |---|---:|---:|---:|---:|---:|---:|
 | Today | $24,419 | $18,627 | $12,713 | $9,189 | $113,796 | |
-| Observational plan | $21,064 | $27,940 | $10,413 | $5,530 | $112,904 | **−$892** (the model promised +$3,993) |
-| Calibrated plan | $20,448 | $27,940 | $9,987 | $6,572 | $113,195 | **−$601** (promised +$3,118) |
+| Observational plan | $21,064 | $27,940 | $10,413 | $5,530 | about $112,900 | **about −$890** (the model promised about +$4,000) |
+| Calibrated plan | $20,448 | $27,940 | $9,987 | $6,572 | about $113,200 | **about −$600** (promised about +$3,100) |
 | Best possible (true curves) | $28,997 | $21,680 | $6,357 | $7,914 | $118,588 | +$4,792 |
+
+Plan revenue is rounded: the optimiser lands a few dollars differently on different machines (CI gets −$889 and −$594, this laptop −$892 and −$601), which doesn't change the conclusion.
 
 **Neither plan beats today's allocation**, although both models predict they will. Average ROI was much better after calibration, but a budget move depends on the *marginal* return, the slope of each curve where you are now, and neither model pins that down from three years of observational data. The right move is to cut display (true ROI 0.6) and add to search; both models instead push social to its cap.
 
