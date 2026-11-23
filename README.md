@@ -20,6 +20,15 @@ Project 6 of my portfolio plan, for marketing-analytics roles. It isn't a rebuil
 | **Why it matters** | It shows how far attribution answers move with the model, what an MMM can and can't tell you, and why experiments matter, before anyone reallocates real budget. |
 | **Proof** | Every attribution model hands out exactly the $340,647 of revenue in the sample (tested). The calibrated MMM cuts the average ROI error from 0.61 to 0.16, but neither model's budget plan beats the current allocation on the true curves. See [Results](#results). |
 
+## Charts
+Rendered from this repo's own results by `charts/make_charts.py` (`make charts`); CI re-renders them on every push.
+
+![Revenue share by channel and attribution model](docs/charts/attribution_by_model.png)
+
+![MMM ROI estimates against the true ROI](docs/charts/mmm_roi_vs_truth.png)
+
+![MMM hold-out forecast](results/mmm_holdout.png)
+
 ## Architecture
 ```mermaid
 flowchart LR

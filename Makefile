@@ -6,7 +6,7 @@ GA4_URL = https://huggingface.co/datasets/gizdevans/ga4-bq-flattened-data/resolv
 GA4_SHA256 = f09b13d6d59f8fd72ef07095eb95085388fa873129961eb116fc0d20dc1e9012
 BOOTSTRAP ?= 40
 
-.PHONY: all download load dbt attribution mmm test clean
+.PHONY: all download load dbt attribution mmm test clean charts
 
 all: download load dbt attribution mmm test   ## real GA4 -> sessions, funnel, attribution; simulated spend -> MMM
 
@@ -33,3 +33,6 @@ test:
 
 clean:
 	rm -rf warehouse dbt/target dbt/logs dbt/dbt_packages
+
+charts:                                            ## README charts -> docs/charts
+	$(PY) charts/make_charts.py

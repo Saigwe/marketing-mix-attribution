@@ -23,3 +23,5 @@ jobs:
           key: ga4-flattened-f09b13d6
       - name: Real GA4 sample -> dbt -> attribution; simulated spend -> MMM; pytest
         run: make all
+      - name: README charts render from the results
+        run: python charts/make_charts.py
